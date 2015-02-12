@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <include file="$(find vigir_lidar_proc_launch)/launch/lidar_proc.launch">
+    <arg name="scan_topic" default="/scan" />
+    <arg name="scan_cloud_topic" default="/scan_cloud" />
+    <arg name="scan_cloud_filtered_topic" default="/scan_cloud_filtered" />
+  
+    <arg name="target_frame" default="motor" />
+    <arg name="use_high_fidelity_projection" default="false" />
+  </include>
+  
+  <rosparam file="$(find vigir_lidar_proc_launch)/config/thor_lidar_self_filter.yaml" command="load" ns="self_filter_lidar" />
+
+</launch>
+

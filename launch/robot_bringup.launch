@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Provide option to set namespace from outside -->
+  <arg name="namespace" default="/thor_mang"/>
+
+  <group ns="$(arg namespace)">
+    <!-- start robot state publisher -->
+    <include file="$(find thor_mang_description)/launch/real_robot.launch">
+      <arg name="namespace" value="$(arg namespace)" />
+    </include>
+
+    <!-- start controllers -->
+    <include file="$(find thor_mang_ros_control)/launch/thor_mang_ros_controller.launch">
+      <arg name="namespace" value="$(arg namespace)" />
+    </include>
+
+    <!-- start lidars -->
+    <!-- <include file="$(find thor_mang_launch)/launch/chest_lidar.launch" /> -->
+    <include file="$(find thor_mang_launch)/launch/head_lidar.launch" />
+
+    <!-- start onboard software -->
+    <include file="$(find thor_mang_launch)/launch/onboard.launch" />
+  </group>
+</launch>
+

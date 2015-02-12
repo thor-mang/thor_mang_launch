@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Provide option to set namespace from outside -->
+  <arg name="namespace" default="/thor_mang"/>
+
+  <!-- start slam -->
+  <group ns="$(arg namespace)">
+    <include file="$(find thor_mang_launch)/launch/hector_slam.launch" />
+    <include file="$(find thor_mang_launch)/launch/state_estimation.launch" />
+  </group>
+
+  <!-- <include file="$(find thor_mang_tud_moveit_config)/launch/move_group.launch" /> -->
+
+</launch>
+
