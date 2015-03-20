@@ -15,6 +15,8 @@
   <node pkg="vigir_simple_joint_pan" type="simple_joint_pan_node.py" name="waist_simple_joint_pan_node" />
   
   <include file="$(find thor_mang_launch)/launch/chest_lidar_proc.launch"/>
+  
+  <include file="$(find thor_mang_launch)/launch/worldmodel.launch"/>
 
 </launch>
 
