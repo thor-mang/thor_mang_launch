@@ -21,7 +21,7 @@
       <param name="frame_rate" value="10"/>
 
       <param name="timestamp_method" value="start"/> <!-- start of frame -->
-      <param name="camera_info_url" value="package://thor_mang_launch/config/head_camera.yaml"/>
+      <param name="camera_info_url" value="package://thor_mang_onboard_launch/config/head_camera.yaml"/>
 
       <param name="auto_exposure" value="3"/> <!-- use aperture_priority auto exposure -->
       <param name="auto_white_balance" value="false"/>
