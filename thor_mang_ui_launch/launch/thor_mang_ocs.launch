@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<launch>
+  <rosparam command="load" file="$(find thor_mang_ui_launch)/config/thor_mang_camera_topics.yaml" />
+  
+  <include  file="$(find thor_mang_ui_launch)/launch/hand_setup_stump.launch">
+    <arg name="name" value="left" />
+    <arg name="name_short" value="l" />
+  </include>
+  <include  file="$(find thor_mang_ui_launch)/launch/hand_setup_stump.launch">
+    <arg name="name" value="right" />
+    <arg name="name_short" value="r" />
+  </include>
+  
+
+  
+  
+  <rosparam file = "$(find vigir_template_library)/object_templates/object_templates.xml"
+              ns   = "ot_library"/>
+
+  <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true" >
+    <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
+  </node>
+  
+  <node name="vigir_ocs_interactive_marker_server_nodelet"     pkg="vigir_ocs_interactive_marker_server_nodelet"     type="interactive_marker_server_nodelet"  respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  
+    
+    
+  <node pkg="vigir_ocs_robot_model" type="moveit_ocs_model_node" name="moveit_ocs_model_node" respawn="true" >
+    <rosparam command="load" file="$(find thor_mang_tud_moveit_config)/config/kinematics.yaml"/>
+  </node>
+  
+  <!--Below allows using inverse reachability and generating simple cartesian plans on OCS-->
+  <!-- @TODO: Not available outside flor_control-->
+  <!--<include file="$(find flor_ocs_planning_manager)/launch/ocs_planning_manager.launch" />-->
+    
+     <!--Below allows using inverse reachability and generating simple cartesian plans on OCS-->
+    <!--<include file="$(find flor_ocs_planning_manager)/launch/ocs_planning_manager.launch" />
+    -->
+    
+    <!--<include file="$(find vigir_image_rotate_ocs)/launch/vigir_image_rotate_ocs_default.launch" />
+    -->
+    
+  
+    <!--Actual UI elements below-->
+  
+  <node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />  
+
+    <!-- Start the main OCS -->
+  <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
+      <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
+  </node>
+  <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
+      <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
+  </node>
+  <node name="vigir_ocs_main_camera_view"     pkg="vigir_ocs_main_camera_view"     type="main_camera_view"         respawn="true" > <!--  output="screen" launch-prefix="xterm -e" / -->
+     <!--   <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
+  </node>
+  
+  <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"         type="joint_limit"              respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+  
+    
+
+</launch>
