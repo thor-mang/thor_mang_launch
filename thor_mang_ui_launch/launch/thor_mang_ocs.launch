@@ -59,7 +59,8 @@
   
   <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
   <node name="vigir_ocs_back_joint_limit"     pkg="vigir_ocs_back_joint_limit"         type="joint_limit"              respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-  
+  <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning"           type="step_interface_qt"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+      
     
 
 </launch>
