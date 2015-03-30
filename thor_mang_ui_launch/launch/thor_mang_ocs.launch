@@ -33,9 +33,6 @@
   <!--Below allows using inverse reachability and generating simple cartesian plans on OCS-->
   <include file="$(find vigir_ocs_planning_manager)/launch/ocs_planning_manager.launch" />
     
-     <!--Below allows using inverse reachability and generating simple cartesian plans on OCS-->
-    <!--<include file="$(find flor_ocs_planning_manager)/launch/ocs_planning_manager.launch" />
-    -->
     
     <!--<include file="$(find vigir_image_rotate_ocs)/launch/vigir_image_rotate_ocs_default.launch" />
     -->
