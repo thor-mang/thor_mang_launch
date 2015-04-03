@@ -10,6 +10,8 @@
     <include file="$(find thor_mang_onboard_launch)/launch/state_estimation.launch" />
   </group>
 
+  <include file="$(find thor_mang_onboard_launch)/launch/$(optenv THOR_ROBOT_TYPE thor_mang)_manipulation_controllers.launch"/>
+
   <include file="$(find thor_mang_onboard_launch)/launch/moveit_planning.launch" />
   
   <node pkg="vigir_simple_joint_pan" type="simple_joint_pan_node.py" name="waist_simple_joint_pan_node" />
