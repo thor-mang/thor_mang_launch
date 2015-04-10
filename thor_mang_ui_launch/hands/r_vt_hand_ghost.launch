@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+
+   <arg name="name"       default="right"/>
+   <arg name="name_short" default="r"    />
+   <arg name="reflect"    default="1"    />
+
+   <node pkg="message_to_tf" type="message_to_tf" name="ghost_$(arg name)_hand_state_to_tf" output="screen" respawn="true">
+     <param name="pose_topic" value="/ghost_$(arg name)_hand_pose" />
+     <param name="footprint_frame_id" value="/ghost_$(arg name)_hand_footprint" />
+     <param name="stabilized_frame_id" value="/ghost_$(arg name)_hand_stabilized" />
+     <param name="child_frame_id" value="/$(arg name)_hand_model/base" />
+   </node>
+
+   <param name    = "$(arg name)_hand_robot_description"
+          command = "rosrun xacro xacro.py $(find thor_vt_hand_description)/hands/vt_hand_ghost.urdf.xacro name:=$(arg name) name_short:=$(arg name_short) reflect:=$(arg reflect)" />
+   <param name    = "$(arg name)_hand_robot_description_semantic"
+          command = "rosrun xacro xacro.py $(find thor_vt_hand_description)/hands/vt_hand_ghost.srdf name:=$(arg name) name_short:=$(arg name_short)" />
+
+
+</launch>

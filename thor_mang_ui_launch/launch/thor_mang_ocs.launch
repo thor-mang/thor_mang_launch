@@ -3,22 +3,15 @@
 <launch>
   <rosparam command="load" file="$(find thor_mang_ui_launch)/config/thor_mang_camera_topics.yaml" />
   
-  <include  file="$(find thor_mang_ui_launch)/launch/hand_setup_stump.launch">
-    <arg name="name" value="left" />
-    <arg name="name_short" value="l" />
-  </include>
-  <include  file="$(find thor_mang_ui_launch)/launch/hand_setup_stump.launch">
-    <arg name="name" value="right" />
-    <arg name="name_short" value="r" />
-  </include>
-  
-
+  <include  file="$(find thor_mang_ui_launch)/hands/$(optenv THOR_LEFT_HAND_TYPE  l_stump)_ghost.launch"/>
+  <include  file="$(find thor_mang_ui_launch)/hands/$(optenv THOR_RIGHT_HAND_TYPE r_stump)_ghost.launch"/>
+  <rosparam command="load" file="$(find thor_mang_ui_launch)/config/thor_mang_hand_parameters.yaml" />
   
   
   <rosparam file = "$(find vigir_template_library)/object_templates/object_templates.xml"
               ns   = "ot_library"/>
 
-  <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true" >
+  <node name="vigir_ocs_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true" >  <!-- output="screen" -->
     <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
   </node>
   
