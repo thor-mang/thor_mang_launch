@@ -38,7 +38,7 @@
     -->
     
   
-    <!--Actual UI elements below-->
+  <!--Actual UI elements below-->
   
   <node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />  
 
@@ -62,6 +62,18 @@
   
   <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning"           type="step_interface_qt"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
       
-    
+  <rosparam file="$(find vigir_rqt_joint_control)/config/displayed_groups.yaml" command="load" ns="vigir_rqt_joint_control"/>
+  
+  <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
+    <remap from="/flor/l_arm_group_controller/trajectory" to="/thor_mang/left_arm_traj_controller/command" />
+    <remap from="/flor/r_arm_group_controller/trajectory" to="/thor_mang/right_arm_traj_controller/command" />
+    <remap from="/flor/l_leg_group_controller/trajectory" to="/thor_mang/left_leg_traj_controller/command" />
+    <remap from="/flor/r_leg_group_controller/trajectory" to="/thor_mang/right_leg_traj_controller/command" />
+    <remap from="/flor/torso_group_controller/trajectory" to="/thor_mang/torso_traj_controller/command" />
+    <remap from="/flor/head_group_controller/trajectory" to="/thor_mang/head_traj_controller/command" />
+  </node>  
+  
+  
+  
 
 </launch>
