@@ -21,8 +21,6 @@
       </rosparam>
       <remap from="scan" to="/head_lidar/scan"/>
     </node>
-
-   <!-- <node pkg="vigir_simple_joint_pan" type="simple_joint_pan_node.py" name="waist_simple_joint_pan_node" />-->
   </group>
 </launch>
 

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-  
   <include file="$(find vigir_lidar_proc_launch)/launch/lidar_proc.launch">
     <arg name="scan_topic" value="/chest_lidar/scan" />
     <arg name="scan_cloud_topic" value="/scan_cloud" />
@@ -12,6 +11,5 @@
   </include>
   
   <rosparam file="$(find vigir_lidar_proc_launch)/config/thor_lidar_self_filter.yaml" command="load" ns="self_filter_lidar" />
-
 </launch>
 
