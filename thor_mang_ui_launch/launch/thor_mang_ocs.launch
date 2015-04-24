@@ -55,7 +55,6 @@
   
   <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning"           type="step_interface_qt"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
       
-  <rosparam file="$(find vigir_rqt_joint_control)/config/displayed_groups.yaml" command="load" ns="vigir_rqt_joint_control"/>
   
   <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
     <remap from="/flor/l_arm_group_controller/trajectory" to="/thor_mang/left_arm_traj_controller/command" />
