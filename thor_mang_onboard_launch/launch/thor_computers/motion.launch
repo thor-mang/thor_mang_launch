@@ -3,6 +3,7 @@
 <launch>
   <!-- Provide option to set namespace from outside -->
   <arg name="namespace" default="/thor_mang"/>
+  <arg name="torque" default="True"/>
 
   <group ns="$(arg namespace)">
     <!-- start robot state publisher -->
@@ -13,6 +14,7 @@
     <!-- start controllers -->
     <include file="$(find thor_mang_ros_control)/launch/thor_mang_ros_controller.launch">
       <arg name="namespace" value="$(arg namespace)" />
+      <arg name="torque" value="$(arg torque)" />
     </include>
   </group>
 </launch>
