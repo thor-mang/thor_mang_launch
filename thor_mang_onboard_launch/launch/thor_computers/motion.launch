@@ -12,7 +12,7 @@
     </include>
 
     <!-- start controllers -->
-    <include file="$(find thor_mang_ros_control)/launch/thor_mang_ros_controller.launch">
+    <include file="$(find thor_mang_ros_control)/launch/$(optenv THOR_ROBOT_TYPE thor_mang)_ros_controller.launch">
       <arg name="namespace" value="$(arg namespace)" />
       <arg name="torque" value="$(arg torque)" />
     </include>
