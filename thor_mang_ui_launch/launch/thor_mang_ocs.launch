@@ -65,7 +65,10 @@
     <remap from="/flor/head_group_controller/trajectory" to="/thor_mang/head_traj_controller/command" />
   </node>  
   
+  <!--Behavior manager-->
+  <node name="vigir_ocs_behavior_manager" pkg="vigir_ocs_behavior_manager" type="behavior_manager" />
   
-  
+  <!--Behavior UI-->
+  <include file="$(find vigir_be_launch)/launch/behavior_ocs.launch" />
 
 </launch>
