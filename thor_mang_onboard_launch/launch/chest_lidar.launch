@@ -12,7 +12,7 @@
         angle_max: 2.2689 
         cluster: 1
         skip: 0
-        ip_address: 192.168.0.11
+        ip_address: 10.11.3.12
         ip_port: 10940
         frame_id: waist_hokuyo_laser_frame
         calibrate_time: true
