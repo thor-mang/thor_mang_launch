@@ -16,10 +16,8 @@
   <!-- start auto-logger -->
   <include file="$(find thor_mang_logger)/launch/default_logger.launch"/>
 
-  <group ns="$(arg namespace)">
-    <!-- start footstep planner -->
-    <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch"/>
-  </group>
+  <!-- start footstep planner -->
+  <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch"/>
 
 </launch>
 
