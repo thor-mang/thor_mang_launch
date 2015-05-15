@@ -1,30 +1,23 @@
 <?xml version="1.0"?>
 
 <launch>
-  <!--Provide option to set namespace from outside-->
-  <arg name="namespace" default="/thor_mang"/>
-
-  <group ns="$(arg namespace)">
-    <node pkg="urg_node" type="urg_node" name="chest_urg_node" output="screen">
-      <rosparam>
-        publish_intensity: true
-        angle_min: -2.2689 
-        angle_max: 2.2689 
-        cluster: 1
-        skip: 0
-        ip_address: 192.168.0.11
-        ip_port: 10940
-        frame_id: waist_hokuyo_laser_frame
-        calibrate_time: true
-        time_offset: 0.0
-        publish_multiecho: false
-      </rosparam>
-      <remap from="scan" to="/chest_lidar/scan"/>
-    </node>
-
-    <node pkg="vigir_simple_joint_pan" type="simple_joint_pan_node.py" name="waist_simple_joint_pan_node" />
-
-    <include file="$(find thor_mang_onboard_launch)/launch/chest_lidar_proc.launch"/>
-  </group>
+  
+  <node pkg="urg_node" type="urg_node" name="chest_urg_node" output="screen">
+    <rosparam>
+      publish_intensity: true
+      angle_min: -2.2689 
+      angle_max: 2.2689 
+      cluster: 1
+      skip: 0
+      ip_address: 10.11.3.12
+      ip_port: 10940
+      frame_id: waist_hokuyo_laser_frame
+      calibrate_time: true
+      time_offset: 0.0
+      publish_multiecho: false
+    </rosparam>
+    <remap from="scan" to="/chest_lidar/scan"/>
+  </node>
+    
 </launch>
 
