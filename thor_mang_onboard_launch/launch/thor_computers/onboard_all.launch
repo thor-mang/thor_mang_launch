@@ -2,6 +2,8 @@
 
 <launch>
 
+  <arg name="namespace" default="/thor_mang"/>
+
   <!-- start perception -->
   <include file="$(find thor_mang_onboard_launch)/launch/thor_computers/perception.launch"/>
 
@@ -13,6 +15,11 @@
 
   <!-- start auto-logger -->
   <include file="$(find thor_mang_logger)/launch/default_logger.launch"/>
+
+  <group ns="$(arg namespace)">
+    <!-- start footstep planner -->
+    <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch"/>
+  </group>
 
 </launch>
 
