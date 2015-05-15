@@ -16,6 +16,9 @@
       <arg name="namespace" value="$(arg namespace)" />
       <arg name="torque" value="$(arg torque)" />
     </include>
+
+    <!-- start footstep planner -->
+    <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch"/>
   </group>
 </launch>
 
