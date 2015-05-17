@@ -7,7 +7,7 @@
     <!--<param name="footprint_frame_id" value="base_footprint2" />-->
     <param name="stabilized_frame_id" value="pelvis_stabilized" />
     <param name="child_frame_id" value="pelvis" />
-    <param name="topic" value="/thor_mang/pelvis_imu" />
+    <param name="topic" value="/thor_mang/state_estimator/pelvis_pose" />
     <!--<param name="tf_prefix" value="ground_truth" />-->
   </node>
   
