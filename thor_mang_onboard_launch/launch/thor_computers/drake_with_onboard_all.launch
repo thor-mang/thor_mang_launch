@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find thor_mang_onboard_launch)/launch/onboard_all.launch"/>
+
+  <!-- start drake -->
+  <include file="$(find vigir_drake_launch)/launch/vigir_drake_matlab.launch"/>
+
+</launch>
+
