@@ -5,13 +5,13 @@
   <arg name="namespace" default="/thor_mang"/>
 
   <!-- start slam -->
-  <group ns="$(arg namespace)">
+  <!--<group ns="$(arg namespace)">
     <include file="$(find thor_mang_onboard_launch)/launch/hector_slam.launch" />
     <include file="$(find thor_mang_onboard_launch)/launch/state_estimation.launch" />
-  </group>
+  </group> -->
   
-  <!--Alternatively to slam, start biped state estimation-->
-  <!--<include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" />-->
+  <!-- Start biped state estimation-->
+  <include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" />
 
   <!-- start onboard software -->
   <include file="$(find thor_mang_onboard_launch)/launch/manipulation_controllers.launch"/>
