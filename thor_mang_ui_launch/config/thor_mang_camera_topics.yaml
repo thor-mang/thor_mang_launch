@@ -8,7 +8,8 @@
             #   <prefix>_full/image_request, 
             #   <prefix>_cropped/image_raw, 
             #   <prefix>_cropped/image_request
-            topic_prefix:["/head_cam"], 
+            topic_prefix:["/camera"],
+            topic_name:["/image_raw"],
             
             # Name the cameras for the OCS
             name:["Head Camera"],
