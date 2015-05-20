@@ -57,4 +57,7 @@
     
   <!--Behavior manager-->
   <node name="vigir_ocs_behavior_manager" pkg="vigir_ocs_behavior_manager" type="behavior_manager" />
+
+  <!--Laser to mesh-->
+  <include file="$(find vigir_point_cloud_proc)/launch/vigir_worldmodel.launch"/>
 </launch>
