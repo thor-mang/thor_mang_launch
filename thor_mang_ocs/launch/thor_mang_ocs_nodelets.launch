@@ -48,7 +48,7 @@
 
   <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
   <!--<include file="$(find flor_moveit_launch)/launch/ocs_model.launch" />-->
-  <include file="$(find thor_mang_tud_moveit_config)/launch/vigir_ocs_model.launch" />
+  <include file="$(find thor_mang_tud_moveit_config)/launch/thor_mang_ocs_model.launch" />
   
   <!--Below allows using inverse reachability and generating simple cartesian plans on OCS-->    
   <include file="$(find vigir_ocs_planning_manager)/launch/ocs_planning_manager.launch" />
