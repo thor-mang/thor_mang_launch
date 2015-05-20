@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-
   <!--<group ns="$(arg namespace)">-->
   <node pkg="tf" type="static_transform_publisher" name="static_pub_footprint_to_pelvis" args="0 0 0.79 0 0.0599 0 footprint_rotated pelvis 100"/>
   <!--<node pkg="tf" type="static_transform_publisher" name="static_pub_footpringt_to_pelvis" args="0 0 0.0 0 0 0 /footprint /pelvis 100"/>-->
@@ -14,5 +13,4 @@
     <param name="topic" value="/thor_mang/pelvis_imu" />
     <!--<param name="tf_prefix" value="ground_truth" />-->
   </node>
-  
 </launch>

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-
   <node name="relay_controller_status"            pkg="topic_tools" type="relay"  args="/flor/controller/status             /flor_robot_status" respawn="true" />
   <node name="relay_grasp_planning_r_hand_status" pkg="topic_tools" type="relay"  args="/grasp_planning/r_hand/status       /flor_robot_status" respawn="true" />
   <node name="relay_grasp_planning_l_hand_status" pkg="topic_tools" type="relay"  args="/grasp_planning/l_hand/status       /flor_robot_status" respawn="true" />
@@ -12,6 +11,4 @@
   <node name="relay_behavior_status"              pkg="topic_tools" type="relay"  args="/flor/behavior/status               /flor_robot_status" respawn="true" />
   <node name="relay_moveit_planner_status"        pkg="topic_tools" type="relay"  args="/flor/planning/upper_body/status    /flor_robot_status" respawn="true" />
   <node name="bridge_status"                      pkg="topic_tools" type="relay"  args="/flor/comms_bridge_status           /flor_robot_status" respawn="true" />
-
 </launch>
-

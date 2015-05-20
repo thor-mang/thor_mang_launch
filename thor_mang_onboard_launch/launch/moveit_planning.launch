@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-
   <include file="$(find thor_mang_tud_moveit_config)/launch/move_group.launch" />
   
   <node name="plan_to_action_node" pkg="vigir_plan_to_action" type="plan_to_action_node" respawn="true" output="screen" > <!-- output="screen" -->
@@ -39,6 +38,4 @@
     <remap from="get_plan_circular" to="/plan_for_circular_motion" />
     <remap from="get_plan_cartesian" to="/plan_for_cartesian_waypoint_motion" />
 </node>
-
 </launch>
-

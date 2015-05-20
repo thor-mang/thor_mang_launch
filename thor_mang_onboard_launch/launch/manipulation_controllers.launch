@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-
-<!--  Call for manipulation controllers depending on robot type-->
+  <!--  Call for manipulation controllers depending on robot type-->
   <include file="$(find thor_mang_onboard_launch)/launch/hands/$(optenv THOR_ROBOT_TYPE thor_mang)_manipulation_controllers.launch"/>
-
 </launch>

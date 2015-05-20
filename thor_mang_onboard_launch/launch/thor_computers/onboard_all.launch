@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-
   <arg name="namespace" default="/thor_mang"/>
 
   <!-- start perception -->
@@ -20,6 +19,4 @@
   <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch"/>
   <!-- Start onboard footstep manager -->
   <include file="$(find vigir_onboard_footstep_manager)/launch/vigir_footstep_manager_thor.launch"/>
-
 </launch>
-
