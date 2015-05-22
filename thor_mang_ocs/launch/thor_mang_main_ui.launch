@@ -22,6 +22,7 @@
   <!-- Start the all the other windows -->
 
   <!--<node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"             type="control_mode_qt"          respawn="true"/>-->
+  <rosparam file="$(find vigir_rqt_joint_control)/config/displayed_groups_thor.yaml" ns="/vigir_rqt_joint_control"/>
   <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"       respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
     <remap from="/flor/l_arm_group_controller/trajectory" to="/thor_mang/left_arm_traj_controller/command" />
     <remap from="/flor/r_arm_group_controller/trajectory" to="/thor_mang/right_arm_traj_controller/command" />
