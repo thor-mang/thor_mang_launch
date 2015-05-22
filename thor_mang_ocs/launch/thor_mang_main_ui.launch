@@ -46,7 +46,7 @@
   <node name="vigir_ocs_template_joystick"    pkg="vigir_ocs_template_joystick"       type="template_joystick"    respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
 
   <!-- =============  Also run the status widgets on the main UI screen ========= -->
-  <!-- TODO: <include file="$(find vigir_rqt_position_mode)/launch/hand_positions.launch" /> -->
+  <include file="$(find vigir_rqt_position_mode)/launch/thor_mang_hands_positions.launch" />
 
   <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find thor_mang_ui_launch)/rviz/rviz_ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
