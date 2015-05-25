@@ -5,6 +5,8 @@
 
   <!-- start perception -->
   <include file="$(find thor_mang_onboard_launch)/launch/thor_computers/perception.launch"/>
+  <!-- start head control -->
+  <include file="$(find vigir_head_control)/launch/head_control_node.launch"/>
 
   <!-- start behavior engine -->
   <include file="$(find vigir_be_launch)/launch/behavior_onboard_thor.launch"/>
