@@ -9,9 +9,7 @@
     <include file="$(find thor_mang_onboard_launch)/launch/hector_slam.launch" />
     <include file="$(find thor_mang_onboard_launch)/launch/state_estimation.launch" />
   </group> -->
-
-  <node name="state_estimator" pkg="biped_state_estimator" type="state_estimator_test" output="screen" ns="/thor_mang"/>
-  
+ 
   <!-- Start biped state estimation-->
   <include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" />
 
