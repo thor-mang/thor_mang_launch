@@ -9,6 +9,4 @@
   <include file="$(find thor_mang_ocs)/launch/thor_mang_ocs_nodelets.launch"/>
 
   <include file="$(find thor_mang_ocs)/launch/thor_mang_main_ui.launch" />  
-
-  <include file="$(find vigir_be_launch)/launch/behavior_ocs.launch" />
 </launch>
