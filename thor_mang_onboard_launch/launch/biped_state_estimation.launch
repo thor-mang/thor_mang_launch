@@ -2,7 +2,7 @@
 
 <launch>
 
-	<node name="world_reset_pub" pkg="rostopic" type="rostopic" args="pub /syscommands std_msgs/String 'reset'" />
+	<node name="world_reset_pub" pkg="rostopic" type="rostopic" args="pub /syscommand std_msgs/String 'reset'" />
     
   <node pkg="message_to_tf" type="message_to_tf" name="imu_to_tf" output="screen">
     <!--<param name="frame_id" value="base_footprint" />-->
