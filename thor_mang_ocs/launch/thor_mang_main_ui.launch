@@ -6,16 +6,16 @@
   <!-- Load camera configuration, params for hands and grasp widget tf -->
   <include file="$(find thor_mang_ocs)/launch/common/common_parameter_setup.launch" />
 
-  <node name="vigir_ocs_global_hotkey" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />
+  <node name="$(anon vigir_ocs_global_hotkey)" pkg="vigir_ocs_global_hotkey" type="global_hotkey" respawn="true" />
 
   <!-- Start the main OCS -->
-  <node name="vigir_ocs_main_view"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
+  <node name="$(anon vigir_ocs_main_view)"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
     <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
   </node>
-  <node name="vigir_ocs_map_view"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon vigir_ocs_map_view)"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
   </node>
-  <node name="vigir_ocs_main_camera_view"     pkg="vigir_ocs_main_camera_view"     type="main_camera_view"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon vigir_ocs_main_camera_view)"     pkg="vigir_ocs_main_camera_view"     type="main_camera_view"         respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
   </node>
 
@@ -23,37 +23,30 @@
 
   <!--<node name="controller_mode_ui"             pkg="vigir_rqt_control_mode"             type="control_mode_qt"          respawn="true"/>-->
   <rosparam file="$(find vigir_rqt_joint_control)/config/displayed_groups_thor.yaml" ns="/vigir_rqt_joint_control"/>
-  <node name="vigir_rqt_joint_control"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"       respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <remap from="/flor/l_arm_group_controller/trajectory" to="/thor_mang/left_arm_traj_controller/command" />
-    <remap from="/flor/r_arm_group_controller/trajectory" to="/thor_mang/right_arm_traj_controller/command" />
-    <remap from="/flor/l_leg_group_controller/trajectory" to="/thor_mang/left_leg_traj_controller/command" />
-    <remap from="/flor/r_leg_group_controller/trajectory" to="/thor_mang/right_leg_traj_controller/command" />
-    <remap from="/flor/torso_group_controller/trajectory" to="/thor_mang/torso_traj_controller/command" />
-    <remap from="/flor/head_group_controller/trajectory"  to="/thor_mang/head_traj_controller/command" />
-  </node> 
+  <node name="$(anon vigir_rqt_joint_control)"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"       respawn="true"/> 
 
-  <node name="vigir_ocs_glance_hub"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	          respawn="true"/>   
-  <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon vigir_ocs_glance_hub)"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	          respawn="true"/>   
+  <node name="$(anon vigir_ocs_ghost_control_widget)" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"           respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
     
-  <node name="vigir_ocs_back_joint_limit"      pkg="vigir_ocs_back_joint_limit"         type="joint_limit"            respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon vigir_ocs_back_joint_limit)"      pkg="vigir_ocs_back_joint_limit"         type="joint_limit"            respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
     <param name="joint_names" value="waist_pan waist_tilt" />
     <param name="joint_name_descriptions" value="yaw pitch" />
   </node>
     
-  <node name="vigir_rqt_step_interface"       pkg="vigir_footstep_planning_widgets"   type="step_interface_qt"    respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-  <node name="vigir_rqt_parameter_editor"     pkg="vigir_footstep_planning_widgets"   type="parameter_editor_qt"  respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-  <node name="vigir_rqt_bdi_pelvis_pose"      pkg="vigir_rqt_bdi_pelvis_pose"         type="pelvis_pose_qt"       respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
-  <node name="vigir_ocs_template_joystick"    pkg="vigir_ocs_template_joystick"       type="template_joystick"    respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon vigir_rqt_step_interface)"       pkg="vigir_footstep_planning_widgets"   type="step_interface_qt"    respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon vigir_rqt_parameter_editor)"     pkg="vigir_footstep_planning_widgets"   type="parameter_editor_qt"  respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon vigir_rqt_bdi_pelvis_pose)"      pkg="vigir_rqt_bdi_pelvis_pose"         type="pelvis_pose_qt"       respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon vigir_ocs_template_joystick)"    pkg="vigir_ocs_template_joystick"       type="template_joystick"    respawn="true"/> <!--  output="screen" launch-prefix="xterm -e" / -->
 
   <!-- =============  Also run the status widgets on the main UI screen ========= -->
   <include file="$(find vigir_rqt_position_mode)/launch/thor_mang_hands_positions.launch" />
 
-  <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find thor_mang_ui_launch)/rviz/rviz_ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
+  <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find thor_mang_ui_launch)/rviz/rviz_ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
-  <node pkg="spacenav_node" type="spacenav_node" name="$(anon spacenav_node)" output="screen">
+  <node pkg="$(anon spacenav_node)" type="spacenav_node" name="$(anon spacenav_node)" output="screen">
     <param name="zero_when_static" value="true"/>    
    <param name="static_count_threshold" value="30"/>
   </node>
 
-  <node name="vigir_ocs_space_mouse"    pkg="vigir_ocs_space_mouse"        type="vigir_ocs_space_mouse"        respawn="true"/>  
+  <node name="$(anon vigir_ocs_space_mouse)"    pkg="vigir_ocs_space_mouse"        type="vigir_ocs_space_mouse"        respawn="true"/>  
 </launch>
