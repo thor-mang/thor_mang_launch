@@ -18,7 +18,10 @@
     </include>
   </group>
 
-    <!-- start control mode switcher -->
+  <!-- start onboard footstep planner -->
+  <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch"/>  
+
+  <!-- start control mode switcher -->
   <include file="$(find thor_mang_control_mode_switcher)/launch/control_mode_switcher_robot.launch"/>
 
 </launch>
