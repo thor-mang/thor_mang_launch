@@ -24,7 +24,7 @@
   
   <include file="$(find thor_mang_onboard_launch)/launch/onboard_crop_decimate_nodelets.launch"/>
 
-  <node pkg="topic_tools" type="relay" name="relay_robot_pose" args="/thor_mang/state_estimatorelvis_pose /flor/controller/atlas_pose" />
+  <node pkg="topic_tools" type="relay" name="relay_robot_pose" args="/thor_mang/state_estimator/pelvis_pose /flor/controller/atlas_pose" />
 
    <!--Commented out as we use the self filtering inside MoveIt -->
    <!--<include file="$(find thor_mang_onboard_launch)/launch/chest_lidar_proc.launch"/>-->  
