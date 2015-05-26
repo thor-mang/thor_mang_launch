@@ -24,5 +24,7 @@
   <!-- start control mode switcher -->
   <include file="$(find thor_mang_control_mode_switcher)/launch/control_mode_switcher_robot.launch"/>
 
+  <include file="$(find thor_mang_fake_joint_states)/launch/fake_joint_publisher.launch"/>
+
 </launch>
 
