@@ -13,5 +13,7 @@
 
 <include  file = "$(find vigir_manipulation_controller)/launch/$(optenv RIGHT_HAND_TYPE r_stump)_manipulation_control.launch" />
 <include  file = "$(find vigir_manipulation_controller)/launch/$(optenv LEFT_HAND_TYPE  l_stump)_manipulation_control.launch"/>
+
+ <rosparam command="load" file="$(find thor_mang_ui_launch)/config/thor_mang_hand_parameters.yaml" />
   
 </launch>
