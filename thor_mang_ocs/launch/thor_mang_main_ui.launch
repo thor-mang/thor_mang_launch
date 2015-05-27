@@ -43,10 +43,5 @@
 
   <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find thor_mang_ui_launch)/rviz/rviz_ocs_default.rviz"  /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
-  <node pkg="$(anon spacenav_node)" type="spacenav_node" name="$(anon spacenav_node)" output="screen">
-    <param name="zero_when_static" value="true"/>    
-   <param name="static_count_threshold" value="30"/>
-  </node>
-
   <node name="$(anon vigir_ocs_space_mouse)"    pkg="vigir_ocs_space_mouse"        type="vigir_ocs_space_mouse"        respawn="true"/>  
 </launch>
