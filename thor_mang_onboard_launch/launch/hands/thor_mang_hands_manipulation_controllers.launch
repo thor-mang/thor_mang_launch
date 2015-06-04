@@ -15,5 +15,10 @@
 <include  file = "$(find vigir_manipulation_controller)/launch/$(optenv LEFT_HAND_TYPE  l_stump)_manipulation_control.launch"/>
 
  <rosparam command="load" file="$(find thor_mang_ui_launch)/config/thor_mang_hand_parameters.yaml" />
+
+<node name="vigir_onboard_template_nodelet" pkg="vigir_ocs_template_nodelet" type="template_nodelet" respawn="true"> <!--output="screen" launch-prefix="xterm -e gdb " > -->
+        <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
+        <param name="master_mode" type="bool" value="false" /> <!--     Server mode "SLAVE"-->
+    </node>
   
 </launch>
