@@ -35,9 +35,7 @@
   <node name="$(anon vigir_rqt_joint_control)"        pkg="vigir_rqt_joint_control"            type="joint_control_qt"       respawn="true"/> 
 
   <node name="$(anon vigir_ocs_glance_hub)"           pkg="vigir_ocs_glance_hub"               type="glance_hub"	          respawn="true"/>   
-  <node name="vigir_ocs_ghost_control_widget" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true">
-    <remap from="/flor/ocs/key_event" to="/flor/ocs/$(arg hotkey_namespace)/key_event" />
-</node>  <!--  output="screen" launch-prefix="xterm -e" / -->
+  
     
   <node name="$(anon vigir_ocs_back_joint_limit)"      pkg="vigir_ocs_back_joint_limit"         type="joint_limit"            respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
     <param name="joint_names" value="waist_pan waist_tilt" />
