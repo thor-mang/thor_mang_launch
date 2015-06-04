@@ -20,6 +20,7 @@
     <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
     <remap from="/flor/ocs/key_event" to="/flor/ocs/$(arg hotkey_namespace)/key_event" />
     <remap from="/flor/ocs/hotkey_relay" to="/flor/ocs/$(arg hotkey_namespace)/hotkey_relay" />
+    <param name="operator_type" value="main"/>
   </node>
   <node name="$(anon vigir_ocs_map_view)"             pkg="vigir_ocs_map_view"             type="map_view"                 respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
     <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
