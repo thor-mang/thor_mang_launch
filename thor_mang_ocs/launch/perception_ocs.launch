@@ -10,4 +10,6 @@
     <arg name="hotkey_namespace" value="perception" />
   </include>  
 
+  <include file="$(find thor_mang_ocs)/launch/thor_mang_ocs_nodelets.launch"/>
+
 </launch>
