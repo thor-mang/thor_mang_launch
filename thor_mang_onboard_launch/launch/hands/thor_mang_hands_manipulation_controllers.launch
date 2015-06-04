@@ -2,6 +2,9 @@
 
 <launch>
   
+<rosparam file = "$(find vigir_template_library)/object_templates/object_templates.xml"
+            ns   = "ot_library"/>
+
 <rosparam file = "$(find vigir_template_library)/robot_poses/thor_mang_stand_poses.xml"
           ns   = "stand_poses_library"/>
 
