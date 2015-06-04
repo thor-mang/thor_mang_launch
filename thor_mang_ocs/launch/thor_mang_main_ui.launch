@@ -11,6 +11,10 @@
     <remap from="/flor/ocs/key_event" to="/flor/ocs/$(arg hotkey_namespace)/key_event" />
   </node>
 
+  <node name="$(anon vigir_ocs_ghost_control_widget)" pkg="vigir_ocs_ghost_control_widget"     type="ghost_control"            respawn="true">
+    <remap from="/flor/ocs/key_event" to="/flor/ocs/$(arg hotkey_namespace)/key_event" />
+  </node>  <!--  output="screen" launch-prefix="xterm -e" / -->
+
   <!-- Start the main OCS -->
   <node name="$(anon vigir_ocs_main_view)"            pkg="vigir_ocs_main_view"            type="main_view"                respawn="true"> <!--  output="screen" launch-prefix="xterm -e gdb -ex r" / -->
     <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->

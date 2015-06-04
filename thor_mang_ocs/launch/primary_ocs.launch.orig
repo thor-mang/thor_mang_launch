@@ -8,5 +8,9 @@
 
   <include file="$(find thor_mang_ocs)/launch/thor_mang_main_ui.launch">
     <arg name="hotkey_namespace" value="primary" />
+<<<<<<< HEAD
+  </include>  
+=======
   </include>
+>>>>>>> fixed ocs launch files
 </launch>
