@@ -6,7 +6,7 @@
 
   <include file="$(find thor_mang_onboard_launch)/launch/thor_mang_status_relay.launch" />
 
-  <include file="$(find thor_mang_ocs)/launch/thor_mang_main_ui.launch" />  
-
-  <include file="$(find thor_mang_ocs)/launch/thor_mang_ocs_nodelets.launch"/>
+  <include file="$(find thor_mang_ocs)/launch/thor_mang_main_ui.launch">
+    <arg name="hotkey_namespace" value="primary" />
+  </include>
 </launch>
