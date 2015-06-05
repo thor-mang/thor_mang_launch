@@ -4,8 +4,8 @@
 
 	<node name="world_reset_pub" pkg="rostopic" type="rostopic" args="pub /syscommand std_msgs/String 'reset_pose_estimation'" />
 
-  <node name="com_throttle" pkg="topic_tools" type="throttle" args="messages /thor_mang/state_estimator/ground_com 5.0"/>
-  <node name="imu_throttle" pkg="topic_tools" type="throttle" args="messages /thor_mang/pelvis_imu 5.0"/>
+  <node name="com_throttle" pkg="topic_tools" type="throttle" args="messages /thor_mang/state_estimator/ground_com 1.0"/>
+  <node name="imu_throttle" pkg="topic_tools" type="throttle" args="messages /thor_mang/pelvis_imu 1.0"/>
     
   <node pkg="message_to_tf" type="message_to_tf" name="imu_to_tf" output="screen">
     <!--<param name="frame_id" value="base_footprint" />-->
