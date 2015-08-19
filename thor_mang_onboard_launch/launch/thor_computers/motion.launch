@@ -3,7 +3,6 @@
 <launch>
   <!-- Provide option to set namespace from outside -->
   <arg name="namespace" default="/thor_mang"/>
-  <arg name="torque" default="True"/>
 
   <group ns="$(arg namespace)">
     <!-- start robot state publisher -->
@@ -14,12 +13,8 @@
     <!-- start controllers -->
     <include file="$(find thor_mang_ros_control)/launch/thor_mang_ros_controller.launch">
       <arg name="namespace" value="$(arg namespace)" />
-      <arg name="torque" value="$(arg torque)" />
     </include>
   </group>
-
-  <!-- start onboard footstep planner -->
-  <!--<include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch"/> --> 
 
   <!-- start control mode switcher -->
   <include file="$(find thor_mang_control_mode_switcher)/launch/control_mode_switcher_robot.launch"/>
