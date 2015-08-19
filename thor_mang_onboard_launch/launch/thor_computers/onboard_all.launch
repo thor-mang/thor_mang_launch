@@ -3,21 +3,26 @@
 <launch>
   <arg name="namespace" default="/thor_mang"/>
 
+  <!-- start auto-logger -->
+  <include file="$(find thor_mang_logger)/launch/default_logger.launch"/>
+
   <!-- start perception -->
   <include file="$(find thor_mang_onboard_launch)/launch/thor_computers/perception.launch"/>
+
   <!-- start head control -->
   <include file="$(find vigir_head_control)/launch/head_control_node.launch"/>
 
   <!-- start behavior engine -->
   <include file="$(find vigir_be_launch)/launch/behavior_onboard_thor.launch"/>
 
-  <!-- start auto-logger -->
-  <include file="$(find thor_mang_logger)/launch/default_logger.launch"/>
+	<!-- start manipulation controller -->
+  <include file="$(find thor_mang_onboard_launch)/launch/manipulation_controllers.launch"/>
 
   <!-- start footstep planner -->
   <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch"/>
   <!-- Start onboard footstep manager -->
   <include file="$(find vigir_onboard_footstep_manager)/launch/vigir_footstep_manager_thor.launch"/>
+
   <!-- Start driving node -->
   <include file="$(find humanoid_driving_controller)/launch/driving_controller.launch"/>
 </launch>
