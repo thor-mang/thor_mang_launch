@@ -10,7 +10,7 @@
     <arg name="hotkey_namespace" value="behavior" />
   </include>  
 
-  <include file="$(find vigir_be_launch)/launch/behavior_ocs.launch" />
+  <include file="$(find vigir_flexbe_launch)/launch/behavior_ocs.launch" />
 
   <include file="$(find thor_mang_supervisor)/launch/supervisor_rqt.launch" />
 </launch>
