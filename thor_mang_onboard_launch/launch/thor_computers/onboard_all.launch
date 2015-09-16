@@ -13,7 +13,7 @@
   <include file="$(find vigir_head_control)/launch/head_control_node.launch"/>
 
   <!-- start behavior engine -->
-  <include file="$(find vigir_be_launch)/launch/behavior_onboard_thor.launch"/>
+  <include file="$(find vigir_flexbe_launch)/launch/behavior_onboard_thor.launch"/>
 
 	<!-- start manipulation controller -->
   <include file="$(find thor_mang_onboard_launch)/launch/manipulation_controllers.launch"/>
