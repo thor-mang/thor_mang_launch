@@ -6,7 +6,10 @@
   <param name="drake_show_visualization" value="true"/>
   <param name="drake_show_com_widget" value="true"/>  
   
-	
+  <!-- Parameters for CoM widget only -->
+  <param name="drake_joint_state_topic" value="/thor_mang/joint_states"/>
+  <param name="drake_imu_topic" value="/thor_mang/pelvis_imu"/>
+  
   <!-- Bridge node to create service for drake integration -->
   <node name="drake_bridge_node"   pkg="vigir_drake_matlab"        type="drake_bridge_node" output="log" respawn="true"/>
   
