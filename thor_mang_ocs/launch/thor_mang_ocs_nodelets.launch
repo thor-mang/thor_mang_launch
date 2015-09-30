@@ -42,9 +42,9 @@
     <remap from="start_index_feet" to="/vigir/ocs/footstep_planning/start_index_feet" />
   </node>
     
-  <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch" >
+<!--  <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch" >
     <arg name="namespace" value="$(arg footstep_planning_ns)" />
-  </include>
+  </include>-->
 
   <!--Starts the ocs model node and loads URDF and SRDF to parameters server-->
   <!--<include file="$(find flor_moveit_launch)/launch/ocs_model.launch" />-->
