@@ -6,7 +6,7 @@
 
   <group ns="$(arg namespace)">
     <!-- start robot state publisher -->
-    <include file="$(find thor_mang_tud_description)/launch/real_robot.launch">
+    <include file="$(find thor_mang_description)/launch/real_robot.launch">
       <arg name="namespace" value="$(arg namespace)" />
     </include>
 
