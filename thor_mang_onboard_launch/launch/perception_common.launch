@@ -20,7 +20,8 @@
   
   <include file="$(find thor_mang_onboard_launch)/launch/worldmodel.launch"/>
   
-  <include file="$(find thor_mang_onboard_launch)/launch/onboard_crop_decimate_nodelets.launch"/>
+  <!--Not required when not experiencing low bandwidth comms-->
+  <!--<include file="$(find thor_mang_onboard_launch)/launch/onboard_crop_decimate_nodelets.launch"/>-->
 
    <!--Commented out as we use the self filtering inside MoveIt -->
    <!--<include file="$(find thor_mang_onboard_launch)/launch/chest_lidar_proc.launch"/>-->  
