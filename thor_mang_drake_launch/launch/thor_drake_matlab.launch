@@ -3,10 +3,10 @@
 <launch>
   <param name="drake_nominal_pose" value="-0.014090, 0.000934, 0.787642, -0.000076, 0.210335, 0.028585, -0.000030, -0.001172, 0.013223, -0.074929, -0.796479, 1.199197, 0.613392, -0.070511, -0.013306, 0.074851, 0.796121, -1.199092, -0.613635, 0.070568, 0.738985, -0.270438, 0.025717, -1.505196, -0.250013, 0.025035, 0.816702, -0.739016, 0.270425, -0.025727, 1.505190, 0.250015, -0.025033, -0.816700, 0.000002, 0.004330, -0.126145, 2.684560, 2.684560, 2.684560, 2.684560" />
  
-  <param name="drake_controller_state_topics"> 
+  <rosparam param="drake_controller_state_topics"> 
     - '/thor_mang/left_leg_traj_controller/state'
-	- '/thor_mang/right_leg_traj_controller/state'
-  </param> 
+    - '/thor_mang/right_leg_traj_controller/state'
+  </rosparam> 
  
   <param name="drake_show_visualization" value="false"/>
   <param name="drake_show_com_widget" value="false"/>    
