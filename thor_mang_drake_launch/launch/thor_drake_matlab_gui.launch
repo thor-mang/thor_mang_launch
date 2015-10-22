@@ -9,12 +9,14 @@
   </rosparam>
   
   <param name="drake_show_visualization" value="true"/>
-  <param name="drake_show_com_widget" value="true"/>  
+  <param name="drake_show_com_widget" value="false"/>  
   
   <param name="drake_do_current_pose_error_compensation" value="true"/>
   
   <param name="drake_do_gravity_compensation" value="false"/>
   <param name="drake_gravity_compensation_factor" value="0.0032"/>
+  
+  <param name="drake_do_cartesian_global_optimization" value="true"/>
   
   <!-- Parameters for CoM widget only -->
   <param name="drake_joint_state_topic" value="/thor_mang/joint_states"/>
