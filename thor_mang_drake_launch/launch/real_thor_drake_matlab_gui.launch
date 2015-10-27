@@ -17,7 +17,7 @@
   <param name="drake_do_gravity_compensation" value="false"/>
   <param name="drake_gravity_compensation_factor" value="0.01"/>
   
-  <param name="drake_do_cartesian_global_optimization" value="true"/>
+  <param name="drake_do_cartesian_global_optimization" value="false"/>
   
   <!-- Parameters for CoM widget only -->
   <param name="drake_joint_state_topic" value="/thor_mang/joint_states"/>
