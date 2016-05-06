@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  <include file="$(find vigir_comms_bridge)/launch/thor_mang_field.launch" />
-</launch>
