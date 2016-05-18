@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  <rosparam file="$(find vigir_template_library)/object_templates/object_templates.xml" ns="ot_library"/>
-  <rosparam command="load" file="$(find thor_mang_ui_launch)/config/thor_mang_hand_parameters.yaml" />
-</launch>
