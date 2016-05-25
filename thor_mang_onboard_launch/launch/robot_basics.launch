@@ -1,7 +1,5 @@
 <?xml version="1.0" ?>
 <launch>
-  <arg name="position_controller" default="true"/>
-
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="use_imu" default="true" />
   <arg name="use_lidar" default="true" />
@@ -9,18 +7,18 @@
   <arg name="pinned" default="false"/>
 
   <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="robot_description"
-	 command="$(find xacro)/xacro.py '$(find thormang3_description)/urdf/thormang3.xacro' pinned:=$(arg pinned)" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find thormang3_description)/urdf/thormang3.xacro' pinned:=$(arg pinned)" />
 
-  <!-- ros_control robotis humanoid launch file -->
-  <group if ="$(arg position_controller)">
-  	<include file="$(find thormang3_gazebo)/launch/position_controller.launch" />
-  </group>
+  <!-- ros control interface -->
+  <include file="$(find thormang3_ros_control_module)/launch/load_position_controllers.launch" />
+  <include file="$(find thormang3_ros_control_module)/launch/load_trajectory_controllers.launch" />
   
   <!-- THORMANG3 Manager -->
   <include file="$(find thormang3_manager)/launch/thormang3_manager.launch">
-    <arg name="use_imu" value="$(arg use_imu)"/>
-    <arg name="use_lidar" value="$(arg use_lidar)" />
+    <arg name="use_imu" value="false" if="$(arg gazebo)" />
+    <arg name="use_imu" value="$(arg use_imu)" unless="$(arg gazebo)" />
+    <arg name="use_lidar" value="false" if="$(arg gazebo)" />
+    <arg name="use_lidar" value="$(arg use_lidar)" unless="$(arg gazebo)" />
     <arg name="gazebo" value="$(arg gazebo)" />
   </include>
 </launch>
