@@ -5,9 +5,11 @@
   <arg name="use_lidar" default="true" />
   <arg name="gazebo" default="false" />
   <arg name="pinned" default="false"/>
+  <arg name="hand_type_0" default="no_hand" />  
+  <arg name="hand_type_1" default="no_hand" />
 
   <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find thormang3_description)/urdf/thormang3.xacro' pinned:=$(arg pinned)" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find thormang3_description)/urdf/thormang3.xacro' pinned:=$(arg pinned) hand_type_0:=$(arg hand_type_0) hand_type_1:=$(arg hand_type_1)" />
 
   <!-- ros control interface -->
   <include file="$(find thormang3_ros_control_module)/launch/load_position_controllers.launch" />
