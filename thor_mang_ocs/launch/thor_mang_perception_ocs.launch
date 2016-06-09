@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+  <rosparam file="$(find thor_mang_control_mode_switcher)/config/control_modes_robot.yaml" />
+  <include file="$(find thor_mang_ocs)/launch/common/common_parameter_setup.launch"/>
+
+  <include file="$(find thor_mang_onboard_launch)/launch/thor_mang_status_relay.launch" />
+
+  <include file="$(find thor_mang_ocs)/launch/thor_mang_ocs_nodelets.launch"/>
+
+  <include file="$(find thor_mang_ocs)/launch/thor_mang_main_ui.launch" />  
+
+  <include file="$(find vigir_flexbe_launch)/launch/behavior_ocs.launch" />
+</launch>
