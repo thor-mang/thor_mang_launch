@@ -8,7 +8,7 @@
   <arg name="gazebo" default="false" />
   <arg name="pinned" default="false"/>
 
-  <group ns="$(arg robot_name)">   
+  <group ns="$(arg robot_name)">
     <!-- THORMANG3 Manager -->
     <include file="$(find thormang3_manager)/launch/thormang3_manager.launch">
       <arg name="robot_name" value="$(arg robot_name)" />
