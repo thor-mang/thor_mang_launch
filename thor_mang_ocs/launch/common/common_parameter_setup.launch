@@ -2,8 +2,8 @@
 
 <launch>
   <!-- Load camera configuration for the UI nodes and nodelets -->
-  <rosparam command="load" file="$(find thor_mang_ui_launch)/config/thor_mang_camera_topics.yaml" />
+  <rosparam command="load" file="$(find thor_mang_ocs)/config/thor_mang_camera_topics.yaml" />
   
   <!-- Load hand configuration for the UI nodes and nodelets -->
-  <rosparam command="load" file="$(find thor_mang_ui_launch)/config/thor_mang_hand_parameters.yaml" />
+  <rosparam command="load" file="$(find thor_mang_ocs)/config/thor_mang_hand_parameters.yaml" />
 </launch>

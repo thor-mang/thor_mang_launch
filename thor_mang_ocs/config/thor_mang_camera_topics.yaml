@@ -1,0 +1,24 @@
+{flor:{
+   ocs:{
+      camera:{
+         # Camera classes will always look for atlas cameras, then left hand, then right hand
+         atlas:{
+            # Camera classes will create four subscribers using prefixes: 
+            #   <prefix>_full/image_raw, 
+            #   <prefix>_full/image_request, 
+            #   <prefix>_cropped/image_raw, 
+            #   <prefix>_cropped/image_request
+            topic_prefix:["/camera"],
+            topic_name:["/image_raw"],
+            
+            # Name the cameras for the OCS
+            name:["Head Camera"],
+            
+            # Camera resolution (full width/height) - this is for the 2D UI only, it doesn't affect rendering of the image
+            width:[800],
+            height:[800]
+         }
+      }
+   }
+}}
+
