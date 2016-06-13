@@ -11,9 +11,10 @@
   <arg name="robot_name" default="thormang3" />
   <arg name="use_hands" default="false" />
 
-  <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find thormang3_description)/urdf/thormang3.xacro'
-      robot_name:=$(arg robot_name)
-      use_hands:=$(arg use_hands)" />
+  <include file="$(find thor_mang_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"  />
+    <arg name="robot_name" value="$(arg robot_name)" />
+    <arg name="use_hands"  value="$(arg use_hands)"  />
+  </include>
 
 </launch>
