@@ -6,4 +6,14 @@
   
   <!-- Load hand configuration for the UI nodes and nodelets -->
   <rosparam command="load" file="$(find thor_mang_ocs)/config/thor_mang_hand_parameters.yaml" />
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="robot_name" default="thormang3" />
+  <arg name="use_hands" default="false" />
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find thormang3_description)/urdf/thormang3.xacro'
+      robot_name:=$(arg robot_name)
+      use_hands:=$(arg use_hands)" />
+
 </launch>
