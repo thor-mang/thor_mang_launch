@@ -3,8 +3,8 @@
 <launch>
   <arg name="footstep_planning_ns" default="/vigir/ocs/footstep_planning" />
 
-  <include  file="$(find thor_mang_ocs)/hands/$(optenv LEFT_HAND_TYPE  l_stump)_ghost.launch"/>
-  <include  file="$(find thor_mang_ocs)/hands/$(optenv RIGHT_HAND_TYPE r_stump)_ghost.launch"/>
+  <include  file="$(find thor_mang_ocs)/hands/$(optenv LEFT_HAND_TYPE  l_vt_hand)_ghost.launch"/>
+  <include  file="$(find thor_mang_ocs)/hands/$(optenv RIGHT_HAND_TYPE r_vt_hand)_ghost.launch"/>
 
   <!--<include  file="$(find vigir_ocs)/launch/nodelets/$(optenv LEFT_HAND_TYPE  l_stump)_vigir_ocs_nodelets.launch" />
   <include  file="$(find vigir_ocs)/launch/nodelets/$(optenv RIGHT_HAND_TYPE r_stump)_vigir_ocs_nodelets.launch" />-->
