@@ -13,7 +13,7 @@
   <include file="$(find vigir_template_library)/launch/vigir_template_parameters.launch"/>
 
   <!-- NEED TO CHANGE TO vigir_object_template_server -->
-  <node name="vigir_object_template_server" pkg="vigir_object_template_server" type="object_template_server" respawn="true" >  <!-- output="screen" -->
+  <node name="vigir_object_template_server" pkg="vigir_object_template_server" type="object_template_server" respawn="true"  output="screen">  <!-- -->
     <remap from="/template/template_match_feedback" to="/grasp_control/template_selection" />
   </node>
 

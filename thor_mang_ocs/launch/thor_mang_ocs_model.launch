@@ -10,6 +10,7 @@
 
   <node pkg="vigir_ocs_robot_model" type="moveit_ocs_model_node" name="moveit_ocs_model_node" respawn="true" >
     <rosparam command="load" file="$(find thor_mang_moveit_config)/config/kinematics.yaml"/>
+    <param name="pelvis_frame" value="pelvis_link"/>
   </node>
 
 </launch>
