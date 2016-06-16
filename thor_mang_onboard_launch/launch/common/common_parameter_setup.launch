@@ -1,14 +1,11 @@
 <?xml version="1.0"?>
 
 <launch>
-
-  <!--arg name="moveit_config_package" default="thor_mang_moveit_config" /-->
-
   <!-- Load camera configuration for the UI nodes and nodelets -->
   <rosparam command="load" file="$(find thor_mang_ocs)/config/thor_mang_camera_topics.yaml" />
   
-  <!-- Load wrist link parameters for the UI nodes and nodelets -->
-  <rosparam command="load" file="$(find thor_mang_moveit_config)/config/hand_parameters.yaml" />
+  <!-- Load hand configuration for the UI nodes and nodelets -->
+  <rosparam command="load" file="$(find thor_mang_ocs)/config/thor_mang_hand_parameters.yaml" />
 
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="robot_name" default="thormang3" />
