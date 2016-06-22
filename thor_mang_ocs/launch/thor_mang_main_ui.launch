@@ -28,6 +28,7 @@
     <!--  <remap from="/flor/worldmodel/ocs/dist_query_pointcloud_result" to="/flor/worldmodel/ocs/cloud_result" /> -->
     <remap from="/flor/ocs/key_event" to="/flor/ocs/$(arg hotkey_namespace)/key_event" />
     <remap from="/flor/ocs/hotkey_relay" to="/flor/ocs/$(arg hotkey_namespace)/hotkey_relay" />
+    <param name="head_traj_namespace" value="/johnny5/joints" />    
   </node>
 
   <!-- Start the all the other windows -->
@@ -40,8 +41,8 @@
   
     
   <node name="$(anon vigir_ocs_back_joint_limit)"      pkg="vigir_ocs_back_joint_limit"         type="joint_limit"            respawn="true"> <!--  output="screen" launch-prefix="xterm -e" / -->
-    <param name="joint_names" value="waist_pan waist_tilt" />
-    <param name="joint_name_descriptions" value="yaw pitch" />
+    <param name="joint_names" value="torso_y" />
+    <param name="joint_name_descriptions" value="yaw" />
   </node>
     
   <node name="$(anon vigir_rqt_step_interface)"       pkg="vigir_footstep_planning_widgets"   type="step_interface_qt"    respawn="true"   ns="$(arg footstep_planning_ns)"/> <!--  output="screen" launch-prefix="xterm -e" / -->
