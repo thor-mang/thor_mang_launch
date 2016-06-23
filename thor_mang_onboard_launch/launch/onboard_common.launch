@@ -19,7 +19,6 @@
   
   <!-- Start head control-->
   <include file="$(find vigir_head_control)/launch/head_control_node.launch">
-    <remap from="/thormang/head_traj_controller/command" to="/johnny5/joints/head_traj_controller/command" />
     <param name="head_traj_namespace" value="/johnny5/joints" />
   </include>
 
