@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <!-- Load wrist link parameters -->
+  <rosparam command="load" file="$(find thor_mang_moveit_config)/config/hand_parameters.yaml" />
+
+  <!-- Start biped state estimation-->
+  <include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" />
+
+  <arg name="robot_name" default="thormang3" />
+  <arg name="use_hands"  default="$(optenv USE_HANDS false)" />
+
+  <node pkg="tf" type="static_transform_publisher" name="map_to_world" args="0 0 0 0 0 0 world map 100" />
+
+  <include file="$(find thor_mang_moveit_config)/launch/move_group.launch" >
+    <arg name="robot_name" value="$(arg robot_name)" />
+    <arg name="use_hands"  value="$(arg use_hands)" />
+  </include>
+
+
+  <node name="state_estimator" pkg="biped_state_estimator" type="state_estimator_test" output="screen" ns="/thor_mang"> 
+    <remap from="/thor_mang/pelvis_imu" to="/johnny5/sensor/imu/filtered"/>
+    <remap from="/joint_states"         to="/johnny5/joints/joint_states"/>
+    <param name="pelvis_name"           value="pelvis_link"/>
+    <param name="right_foot_name"       value="r_leg_foot_link"/>
+    <param name="left_foot_name"        value="l_leg_foot_link"/>
+  </node>
+ 
+</launch>
+
