@@ -2,7 +2,7 @@
 
 <launch>
   <!-- Provide option to set namespace from outside -->
-  <arg name="namespace" default="/thor_mang"/>
+  <arg name="namespace" default="/thormang3"/>
   <!--arg name="moveit_config_package" default="thor_mang_moveit_config" /-->
   
   <!-- Load wrist link parameters -->
