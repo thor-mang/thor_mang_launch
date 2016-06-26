@@ -19,9 +19,9 @@
 		<param name="topic" value="/state_estimator/ground_point" />
 	</node>
 	
-	  <node name="state_estimator" pkg="biped_state_estimator" type="state_estimator_test" output="screen"> 
+  <node name="state_estimator" pkg="biped_state_estimator" type="state_estimator_test" output="screen" ns="johnny5"> 
     <remap from="~pelvis_imu" to="/johnny5/sensor/imu/filtered"/>
-    <remap from="~joint_states"         to="/johnny5/joints/joint_states"/>
+    <remap from="~joint_states"         to="joints/joint_states"/>
     <param name="pelvis_name"           value="pelvis_link"/>
     <param name="right_foot_name"       value="r_leg_foot_link"/>
     <param name="left_foot_name"        value="l_leg_foot_link"/>
