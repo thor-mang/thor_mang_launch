@@ -2,7 +2,8 @@
 
 <launch>
   <!-- Provide option to set namespace from outside -->
-  <arg name="namespace" default="/thormang3"/>
+  <arg name="namespace" default="thormang3"/>
+
   <!--arg name="moveit_config_package" default="thor_mang_moveit_config" /-->
   
   <!-- Load wrist link parameters -->
@@ -14,7 +15,7 @@
   <!-- Start biped state estimation-->
   <include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" />
 
-  <!-- start onboard software -->
+  <!-- Start MoveIt! software -->
   <include file="$(find thor_mang_onboard_launch)/launch/moveit_planning.launch" />
   
   <!-- Start head control-->
@@ -23,10 +24,6 @@
   </include>
 
   <node pkg="topic_tools" type="relay" name="relay_head_joints" args="/thormang/head_traj_controller/command /johnny5/joints/head_traj_controller/command" />
-
-  <!--node pkg="vigir_simple_joint_pan" type="simple_joint_pan_node.py" name="waist_simple_joint_pan_node" /-->
   
   <include file="$(find thor_mang_onboard_launch)/launch/worldmodel.launch"/>
-
 </launch>
-

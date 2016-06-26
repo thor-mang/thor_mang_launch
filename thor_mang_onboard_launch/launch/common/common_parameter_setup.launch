@@ -16,5 +16,4 @@
     <arg name="robot_name" value="$(arg robot_name)" />
     <arg name="use_hands"  value="$(arg use_hands)"  />
   </include>
-
 </launch>

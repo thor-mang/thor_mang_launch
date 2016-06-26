@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-  
   <!-- Load wrist link parameters -->
   <rosparam command="load" file="$(find thor_mang_moveit_config)/config/hand_parameters.yaml" />
 
