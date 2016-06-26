@@ -54,6 +54,6 @@
   <include file="$(find vigir_point_cloud_proc)/launch/vigir_worldmodel.launch"/>
 
   <!-- relay required ghost topics -->
-  <node pkg="topic_tools" type="relay" name="relay_robot_pose" args="/thor_mang/state_estimator/pelvis_pose /flor/controller/atlas_pose" />
+  <node pkg="topic_tools" type="relay" name="relay_robot_pose" args="/johnny5/state_estimator/pelvis_pose /flor/controller/atlas_pose" />
   <node pkg="topic_tools" type="relay" name="relay_robot_joints" args="/thor_mang/joint_states /atlas/joint_states" />
 </launch>
