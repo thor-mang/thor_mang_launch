@@ -5,8 +5,8 @@
   <arg name="camera" default="/johnny5/sensors/asus"/>
 
   <!-- Start Asus RGBD camera-->
-  <include file="$(find openni2_launch)/launch/openni2.launch" ns="johnny5">
-      <arg name="camera" value="sensors/asus" />
+  <include file="$(find openni2_launch)/launch/openni2.launch" ns="johnny5/sensors">
+      <arg name="camera" value="head_cam" />
   </include>
  
   <!-- Start head control-->
