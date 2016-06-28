@@ -3,8 +3,6 @@
 <launch>
   <!-- Provide option to set namespace from outside -->
   <arg name="namespace" default="thormang3"/>
-
-  <!--arg name="moveit_config_package" default="thor_mang_moveit_config" /-->
   
   <!-- Load wrist link parameters -->
   <rosparam command="load" file="$(find thor_mang_moveit_config)/config/hand_parameters.yaml" />
@@ -18,12 +16,10 @@
   <!-- Start MoveIt! software -->
   <include file="$(find thor_mang_onboard_launch)/launch/moveit_planning.launch" />
   
-  <!-- Start head control-->
-  <include file="$(find vigir_head_control)/launch/head_control_node.launch">
-    <param name="head_traj_namespace" value="/johnny5/joints" />
-  </include>
-
-  <node pkg="topic_tools" type="relay" name="relay_head_joints" args="/thormang/head_traj_controller/command /johnny5/joints/head_traj_controller/command" />
+  <!-- Start Multisensor Head -->
+  <include file="$(find thor_mang_onboard_launch)/launch/multisensor_head.launch" />
   
+  <!-- Start Worldmodel server -->
   <include file="$(find thor_mang_onboard_launch)/launch/worldmodel.launch"/>
+
 </launch>
