@@ -2,6 +2,6 @@
 
 <launch>
   <include file="$(find thor_mang_torque_control)/launch/torque_control.launch">
-    <param name="namespace" value="johnny5" />
+    <arg name="namespace" value="johnny5" />
   </include>
 </launch> 
