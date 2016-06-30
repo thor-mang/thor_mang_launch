@@ -2,10 +2,11 @@
 
 <launch>
   <!-- Provide option to set namespace from outside -->
-  <arg name="camera" default="/johnny5/sensors/asus"/>
+  <arg name="camera" default="/johnny5/sensor/asus"/>
+  <arg name="gazebo" default="false" />
 
   <!-- Start Asus RGBD camera-->
-  <include file="$(find openni2_launch)/launch/openni2.launch" ns="johnny5/sensors">
+  <include file="$(find openni2_launch)/launch/openni2.launch" ns="johnny5/sensor" unless="$(arg gazebo)">
       <arg name="camera" value="head_cam" />
       <arg name="publish_tf" value="false" />
   </include>
@@ -16,4 +17,6 @@
   </include>
 
   <node pkg="topic_tools" type="relay" name="relay_head_joints" args="/thormang/head_traj_controller/command /johnny5/joints/head_traj_controller/command" />
+  <node pkg="topic_tools" type="relay" name="relay_gazebo_asus" args="/thormang/head_traj_controller/command /johnny5/joints/head_traj_controller/command" />
+
 </launch>
