@@ -7,6 +7,7 @@
   <!-- Start Asus RGBD camera-->
   <include file="$(find openni2_launch)/launch/openni2.launch" ns="johnny5/sensors">
       <arg name="camera" value="head_cam" />
+      <arg name="publish_tf" value="false" />
   </include>
  
   <!-- Start head control-->
