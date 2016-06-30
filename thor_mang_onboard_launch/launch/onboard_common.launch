@@ -4,6 +4,9 @@
   <!-- Provide option to set namespace from outside -->
   <arg name="namespace" default="thormang3"/>
   
+  <!-- Start bag auto logger -->
+  <include file="$(find thor_mang_logger)/launch/default_logger.launch"/>
+  
   <!-- Load wrist link parameters -->
   <rosparam command="load" file="$(find thor_mang_moveit_config)/config/hand_parameters.yaml" />
 
