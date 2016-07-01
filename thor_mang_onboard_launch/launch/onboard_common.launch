@@ -6,7 +6,7 @@
   <arg name="gazebo"    default="false" />
   
   <!-- Start bag auto logger -->
-  <include file="$(find thor_mang_logger)/launch/default_logger.launch"/>
+  <include file="$(find thor_mang_logger)/launch/default_logger.launch" />
   
   <!-- Load wrist link parameters -->
   <rosparam command="load" file="$(find thor_mang_moveit_config)/config/hand_parameters.yaml" />
@@ -26,6 +26,8 @@
   </include>
   
   <!-- Start Worldmodel server -->
-  <include file="$(find thor_mang_onboard_launch)/launch/worldmodel.launch"/>
+  <include file="$(find thor_mang_onboard_launch)/launch/worldmodel.launch" />
 
+  <!-- Start footstep planning system -->
+  <include file="$(find thor_mang_footstep_planner)/launch/thor_mang_footstep_planner.launch" />
 </launch>
