@@ -8,7 +8,7 @@
             #   <prefix>_full/image_request, 
             #   <prefix>_cropped/image_raw, 
             #   <prefix>_cropped/image_request
-            topic_prefix:["/johnny5/sensors/head_cam/rgb"],
+            topic_prefix:["/johnny5/sensor/head_cam/rgb"],
             topic_name:["/image_raw"],
             
             # Name the cameras for the OCS
