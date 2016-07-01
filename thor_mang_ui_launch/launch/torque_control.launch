@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-  <include file="$(find thor_mang_torque_control)/launch/torque_control.launch">
-    <arg name="namespace" value="johnny5" />
-  </include>
+  <group ns="johnny5">
+    <include file="$(find thor_mang_torque_control)/launch/torque_control.launch" />
+  </group>
 </launch> 
