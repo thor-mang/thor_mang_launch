@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Start robot basics -->
+  <include file="$(find thor_mang_onboard_launch)/launch/robot_basics.launch">
+    <arg name="robot_name" value="johnny5" />
+    <arg name="tuning"     value="true" />
+  </include>
+</launch>
