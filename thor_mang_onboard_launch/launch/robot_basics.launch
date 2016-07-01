@@ -19,5 +19,8 @@
       <arg name="use_lidar"   if="$(arg gazebo)"      value="false" />
       <arg name="use_lidar"   unless="$(arg gazebo)"  value="$(arg use_lidar)" />
     </include>
+
+    <!-- Start Control Mode Switcher -->
+    <include file="$(find thor_mang_control_mode_switcher)/launch/control_mode_switcher.launch" />
   </group>
 </launch>
