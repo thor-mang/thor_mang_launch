@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <launch>
   <include file="$(find thor_mang_onboard_launch)/launch/onboard_common.launch">
-    <arg name="robot_name" value="johnny5" />
+    <arg name="namespace" value="johnny5" />
   </include>
 </launch>
