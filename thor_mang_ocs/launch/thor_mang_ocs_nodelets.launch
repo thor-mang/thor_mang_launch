@@ -22,14 +22,14 @@
   <node name="vigir_ocs_interactive_marker_server_nodelet"     pkg="vigir_ocs_interactive_marker_server_nodelet"     type="interactive_marker_server_nodelet"  respawn="true"    /> <!--  output="screen" launch-prefix="xterm -e" / -->
 
   <node name="vigir_ocs_footstep_manager" pkg="vigir_ocs_footstep_manager" type="footstep_manager" ns="$(arg footstep_planning_ns)" respawn="true" output="screen" > <!--   launch-prefix="xterm -e gdb -ex r" />-->
-    <remap from="execute_step_plan"   to="/robot_controllers/footstep_controller/execute_step_plan" />
-    <remap from="get_all_parameter_sets" to="/vigir/footstep_planning/params/get_all_parameter_sets" />
-    <remap from="onboard_step_plan_request" to="/vigir/footstep_planning/vis/step_plan_request" />
-    <remap from="onboard_step_plan" to="/vigir/footstep_planning/vis/step_plan" />
+    <remap from="execute_step_plan"   to="/johnny5/walk_control_module/execute_step_plan" />
+    <remap from="get_all_parameter_sets" to="/johnny5/footstep_planning/params/get_all_parameter_sets" />
+    <remap from="onboard_step_plan_request" to="/johnny5/footstep_planning/vis/step_plan_request" />
+    <remap from="onboard_step_plan" to="/johnny5/footstep_planning/vis/step_plan" />
     <remap from="ocs_step_plan_request" to="/vigir/ocs/footstep_planning/vis/step_plan_request" />
     <remap from="ocs_step_plan" to="/vigir/ocs/footstep_planning/vis/step_plan" />
     <remap from="ocs_step_plan" to="/vigir/ocs/footstep_planning/vis/step_plan" />
-    <remap from="set_active_parameter_set_ocs" to="/vigir/footstep_planning/set_active_parameter_set" />
+    <remap from="set_active_parameter_set_ocs" to="/johnny5/footstep_planning/set_active_parameter_set" />
     <remap from="set_active_parameter_set_onboard" to="/vigir/ocs/footstep_planning/set_active_parameter_set" />
     <remap from="start_index_feet" to="/vigir/ocs/footstep_planning/start_index_feet" />
   </node>
