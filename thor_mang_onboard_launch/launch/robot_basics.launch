@@ -18,6 +18,7 @@
       <arg name="use_imu"     unless="$(arg gazebo)"  value="$(arg use_imu)" />
       <arg name="use_lidar"   if="$(arg gazebo)"      value="false" />
       <arg name="use_lidar"   unless="$(arg gazebo)"  value="$(arg use_lidar)" />
+      <arg name="pinned" value="$(arg pinned)" />
     </include>
 
     <!-- Start Control Mode Switcher -->
