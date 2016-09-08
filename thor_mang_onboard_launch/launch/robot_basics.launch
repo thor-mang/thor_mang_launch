@@ -6,22 +6,26 @@
   <arg name="use_imu" default="true" />
   <arg name="use_lidar" default="true" />
   <arg name="gazebo" default="false" />
-  <arg name="pinned" default="false"/>
+  <arg name="pinned" default="false" />
+  <arg name="ground_truth" default="false" />
 
   <group ns="$(arg robot_name)">
     <!-- THORMANG3 Manager -->
     <include file="$(find thormang3_manager)/launch/thormang3_manager.launch">
-      <arg name="robot_name" value="$(arg robot_name)" />
-      <arg name="use_hands" value="$(arg use_hands)" />
-      <arg name="gazebo" value="$(arg gazebo)" />
-      <arg name="use_imu"     if="$(arg gazebo)"      value="false" />
-      <arg name="use_imu"     unless="$(arg gazebo)"  value="$(arg use_imu)" />
-      <arg name="use_lidar"   if="$(arg gazebo)"      value="false" />
-      <arg name="use_lidar"   unless="$(arg gazebo)"  value="$(arg use_lidar)" />
-      <arg name="pinned" value="$(arg pinned)" />
+      <arg name="robot_name"  value="$(arg robot_name)" />
+      <arg name="use_hands"   value="$(arg use_hands)" />
+      <arg name="gazebo"      value="$(arg gazebo)" />
+      <arg name="use_imu"     value="false"             if="$(arg gazebo)" />
+      <arg name="use_imu"     value="$(arg use_imu)"    unless="$(arg gazebo)" />
+      <arg name="use_lidar"   value="false"             if="$(arg gazebo)" />
+      <arg name="use_lidar"   value="$(arg use_lidar)"  unless="$(arg gazebo)" />
+      <arg name="pinned"      value="$(arg pinned)" />
     </include>
 
     <!-- Start Control Mode Switcher -->
     <include file="$(find thor_mang_control_mode_switcher)/launch/control_mode_switcher.launch" />
+
+    <!-- Start biped state estimation-->
+    <include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" unless="$(arg ground_truth)" />
   </group>
 </launch>
