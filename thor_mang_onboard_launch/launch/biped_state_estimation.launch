@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <launch>    
-    <param name="/robot_description_semantic" textfile="$(find thor_mang_moveit_config)/config/thormang3.srdf" />
+  <param name="/robot_description_semantic" textfile="$(find thor_mang_moveit_config)/config/thormang3.srdf" />
 
-    <node pkg="message_to_tf" type="message_to_tf" name="imu_to_tf" output="screen">
+  <node pkg="message_to_tf" type="message_to_tf" name="imu_to_tf" output="screen">
     <!--<param name="frame_id" value="base_footprint" />-->
     <!--<param name="footprint_frame_id" value="base_footprint2" />-->
     <param name="stabilized_frame_id" value="pelvis_stabilized" />
@@ -13,14 +13,13 @@
     <!--<param name="tf_prefix" value="ground_truth" />-->
   </node>
 
-	<node pkg="message_to_tf" type="message_to_tf" name="foot_frame_to_tf" output="screen">
+  <node pkg="message_to_tf" type="message_to_tf" name="foot_frame_to_tf" output="screen">
     <!--<param name="frame_id" value="world" />-->
     <param name="footprint_frame_id" value="footstep_base_" />
-		<param name="stabilized_frame_id" value="footstep_stabilized" />
-		<param name="child_frame_id" value="footstep_frame" />
-		<param name="topic" value="/state_estimator/ground_point" />
-	</node>
-	
+    <param name="stabilized_frame_id" value="footstep_stabilized" />
+    <param name="child_frame_id" value="footstep_frame" />
+    <param name="topic" value="/state_estimator/ground_point" />
+  </node>
 
   <node name="state_estimator" pkg="biped_state_estimator" type="state_estimator_test" output="screen" ns="johnny5"> 
     <remap from="~pelvis_imu"           to="sensor/imu/filtered"/>
@@ -29,5 +28,4 @@
     <param name="right_foot_name"       value="r_leg_foot_link"/>
     <param name="left_foot_name"        value="l_leg_foot_link"/>
   </node>
-  
 </launch>
