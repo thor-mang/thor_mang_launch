@@ -21,7 +21,7 @@
     <param name="topic" value="/state_estimator/ground_point" />
   </node>
 
-  <node name="state_estimator" pkg="biped_state_estimator" type="state_estimator_test" output="screen" ns="johnny5"> 
+  <node name="state_estimator" pkg="biped_state_estimator" type="state_estimator_test" output="screen"> 
     <remap from="~pelvis_imu"           to="sensor/imu/filtered"/>
     <remap from="~joint_states"         to="joints/joint_states"/>
     <param name="pelvis_name"           value="pelvis_link"/>
