@@ -9,11 +9,11 @@
   <!-- Start Intel RealSense RGBD camera-->
   <include file="$(find realsense_camera)/launch/r200_nodelet_rgbd.launch" ns="johnny5/sensor" unless="$(arg gazebo)">
       <arg name="camera" value="head_cam" />
-      <arg name="publish_tf" value="true" /> <!--TODO: change-->
+      <arg name="publish_tf" value="true" />
       <arg name="hw_registered_processing"        default="true" />
       <arg name="sw_registered_processing"        default="true" />
   </include>
- 
+
   <node pkg="topic_tools" type="relay" name="relay_head_joints" args="/thormang/head_traj_controller/command /johnny5/joints/head_traj_controller/command" />
   <node pkg="topic_tools" type="relay" name="relay_gazebo_asus" args="/thormang/head_traj_controller/command /johnny5/joints/head_traj_controller/command" />
 
