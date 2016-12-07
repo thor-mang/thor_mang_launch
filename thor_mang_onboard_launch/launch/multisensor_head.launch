@@ -13,6 +13,11 @@
       <arg name="hw_registered_processing"        default="true" />
       <arg name="sw_registered_processing"        default="true" />
   </include>
+  
+  <!-- Start head control-->
+  <include file="$(find vigir_head_control)/launch/head_control_node.launch">
+    <param name="head_traj_namespace" value="/johnny5/joints" />
+  </include>
 
   <node pkg="topic_tools" type="relay" name="relay_head_joints" args="/thormang/head_traj_controller/command /johnny5/joints/head_traj_controller/command" />
   <node pkg="topic_tools" type="relay" name="relay_gazebo_asus" args="/thormang/head_traj_controller/command /johnny5/joints/head_traj_controller/command" />
