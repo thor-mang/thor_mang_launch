@@ -2,7 +2,7 @@
 
 <launch>
   <!-- Provide option to set namespace from outside -->
-  <arg name="camera" default="/johnny5/sensor/asus"/>
+  <arg name="camera" default="/johnny5/sensor/realsense"/>
   <arg name="gazebo" default="false" />
 
   
