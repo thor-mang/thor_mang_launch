@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<launch>
+  <!-- Start robot basics -->
+<!--  <include file="$(find thor_mang_onboard_launch)/launch/robot_basics.launch">
+    <arg name="robot_name" value="johnny5" />
+  </include>-->
+  
+    <!-- Start sensor drivers -->
+  <include file="$(find thor_mang_onboard_launch)/launch/multisensor_head.launch">
+      <arg name="gazebo" value="false" />  
+  </include>
+  
+</launch>
