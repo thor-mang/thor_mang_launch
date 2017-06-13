@@ -22,7 +22,7 @@
     <param name="publish_imu" value="true" type="bool" />
     <param name="imu_rate" value="125" type="int" />
     <param name="imu_frame_id" value="imu_link" type="str" />
-    <remap from="/imu/data" to="sensor/imu/filtered"/>
+    <remap from="imu/data" to="sensor/imu/raw"/>
 
     <!-- Setting manual declination is not yet implemented/testes -->
     <!-- Declination source 1=None, 2=magnetic, 3=manual -->
@@ -41,6 +41,8 @@
     <param name="odom_frame_id" value="wgs84_odom_link" type="str" />
     <param name="odom_child_frame_id" value="base_link" type="str" />
   </node>
+  
+  <node pkg="topic_tools" name="imu_filtered_republish" type="relay" args="sensor/imu/raw sensor/imu/filtered" />
 
   <!-- Diagnostics -->
   <!--
