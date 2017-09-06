@@ -1,20 +1,13 @@
 <?xml version="1.0"?>
 
 <launch>
-  <!-- Load wrist link parameters -->
-  <rosparam command="load" file="$(find thor_mang_moveit_config)/config/hand_parameters.yaml" />
-
-  <!-- Start biped state estimation-->
-  <include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" />
-
   <arg name="robot_name" default="thormang3" />
   <arg name="use_hands"  default="$(optenv USE_HANDS false)" />
 
   <node pkg="tf" type="static_transform_publisher" name="map_to_world" args="0 0 0 0 0 0 world map 100" />
 
-  <include file="$(find thor_mang_moveit_config)/launch/move_group.launch" >
-    <arg name="robot_name" value="$(arg robot_name)" />
-    <arg name="use_hands"  value="$(arg use_hands)" />
-  </include>
+  <group ns="$(arg robot_name)">
+    <include file="$(find thor_mang_moveit_config)/launch/move_group.launch" />
+  </group>
 </launch>
 
