@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  <node name="$(anon rviz)" pkg="rviz" type="rviz" args="-d $(find thor_mang_ui_launch)/rviz/rviz_thor_mang_default.rviz" ns="johnny5"/>
-</launch>
