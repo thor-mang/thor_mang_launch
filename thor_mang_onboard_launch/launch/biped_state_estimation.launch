@@ -24,8 +24,12 @@
   <node name="state_estimator" pkg="biped_state_estimator" type="state_estimator_test" output="screen"> 
     <remap from="~pelvis_imu"           to="sensor/imu/filtered"/>
     <remap from="~joint_states"         to="joints/joint_states"/>
+    <param name="tf_odom_frame"         value="odom" />
     <param name="pelvis_name"           value="pelvis_link"/>
     <param name="right_foot_name"       value="r_leg_foot_link"/>
     <param name="left_foot_name"        value="l_leg_foot_link"/>
   </node>
+  
+  <node pkg="tf" type="static_transform_publisher" name="odom_world_tf_static_publisher" args="0 0 0 0 0 0 1 world odom 100" />
+  
 </launch>
