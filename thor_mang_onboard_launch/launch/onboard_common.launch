@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 <launch>
-  <!-- Provide option to set namespace from outside -->
-  <arg name="namespace" default="thormang3"/>
-  <arg name="gazebo"    default="false" />
+  <!-- Provide option to set parameters from outside -->
+  <arg name="robot_name"  default="thormang3"/>
+  <arg name="gazebo"      default="false" />
   
   <!-- Start bag auto logger -->
   <include file="$(find thor_mang_logger)/launch/default_logger.launch" />
