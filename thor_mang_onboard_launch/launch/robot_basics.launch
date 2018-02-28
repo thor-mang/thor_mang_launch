@@ -1,8 +1,5 @@
 <?xml version="1.0" ?>
 <launch>
-  <!-- executing this here to be separated from second parameter load -->
-  <include file="$(find thor_vt_hand_ros_control)/launch/l_vt_hand_sim_trajectory_controllers.launch" ns="joints" if="$(arg use_hands)" />
-
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="robot_name" default="thormang3" />
   <arg name="use_hands" default="$(optenv USE_HANDS false)" />
@@ -32,18 +29,9 @@
   <!-- combine joint values to TF-->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 
-  <!-- walk control module -->
-  <include file="$(find thormang3_step_control_module)/launch/load_step_controller.launch" />
-
-  <!-- ros control module -->
-  <include file="$(find thormang3_ros_control_module)/launch/load_trajectory_controllers.launch" />
-
   <!-- start Control Mode Switcher -->
   <include file="$(find thor_mang_control_mode_switcher)/launch/control_mode_switcher.launch" />
 
   <!-- start Biped State Estimation-->
   <include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" unless="$(arg ground_truth)" />
-
-  <!-- executing this here to be separated from first parameter load -->
-  <include file="$(find thor_vt_hand_ros_control)/launch/r_vt_hand_sim_trajectory_controllers.launch" ns="joints" if="$(arg use_hands)" />
 </launch>
