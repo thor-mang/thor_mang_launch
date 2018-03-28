@@ -21,9 +21,14 @@
   <!-- joint values -->
   <remap from="joint_states" to="joints/joint_states" />
 
+  <node name="rh_joint_state_publisher" pkg="rh_p12_rn_tools" type="rh_joint_state_pub_node" if="$(eval arg('l_hand_type') == 'rh_p12_rn' or arg('r_hand_type') == 'rh_p12_rn')">
+    <param name="target" value="robotis/joints/present_joint_states" if="$(arg use_present)" />
+    <param name="target" value="robotis/joints/goal_joint_states" unless="$(arg use_present)" />
+  </node>
+
   <node name="robotis_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="use_gui" value="false"/>
-    <param name="rate" value="125"/>
+    <param name="use_gui" value="false" />
+    <param name="rate" value="125" />
     <rosparam param="source_list" if="$(arg use_present)">["robotis/joints/present_joint_states"]</rosparam>
     <rosparam param="source_list" unless="$(arg use_present)">["robotis/joints/goal_joint_states"]</rosparam>
   </node>
