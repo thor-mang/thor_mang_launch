@@ -39,6 +39,9 @@
   <!-- start Control Mode Switcher -->
   <include file="$(find thor_mang_control_mode_switcher)/launch/control_mode_switcher.launch" />
 
+  <!-- start Laser Self Filtering -->
+  <include file="$(find thor_mang_onboard_launch)/launch/self_filter.launch" />
+
   <!-- start Biped State Estimation-->
   <include file="$(find thor_mang_onboard_launch)/launch/biped_state_estimation.launch" unless="$(arg ground_truth)" />
 </launch>
