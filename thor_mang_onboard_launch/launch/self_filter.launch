@@ -2,8 +2,10 @@
 <launch>
   <!--converting the laserscan data to a point cloud -->
   <node pkg="vigir_laserscan_to_pointcloud" type="laserscan_to_pointcloud_node" name="scan_to_pointcloud" output="screen" respawn="true">
+    <param name="use_high_fidelity_projection" value="True" />
     <remap from="scan" to="sensor/head_lidar/scan"/>
     <remap from="scan_cloud" to="scan_cloud"/>
+    <rosparam command="load" file="$(find thor_mang_onboard_launch)/config/scan_filter.yaml" />
   </node>
 
   <node pkg="robot_self_filter" type="self_filter" name="robot_self_filter" output="screen" respawn="true">
@@ -15,14 +17,14 @@
       shadow points will be considered outside -->
     <param name="sensor_frame" type="string" value="head_link_hokuyo_laser_frame" />
 
-     <!-- Minimum distance to sensor (for point not to be considered inside) -->
-     <param name="min_sensor_dist" type="double" value="0.01" />
+    <!-- Minimum distance to sensor (for point not to be considered inside) -->
+    <param name="min_sensor_dist" type="double" value="0.01" />
 
-     <!-- The padding to be added for the body parts the robot can see (0.02, increased to 0.04 due to small errors at chest and arms) -->
-     <param name="self_see_padd" type="double" value="0.04" />
+    <!-- The padding to be added for the body parts the robot can see (0.02, increased to 0.04 due to small errors at chest and arms) -->
+    <param name="self_see_padd" type="double" value="0.04" />
 
-     <!-- The scaling to be added for the body parts the robot can see -->
-     <param name="self_see_scale" type="double" value="1.05" />
+    <!-- The scaling to be added for the body parts the robot can see -->
+    <param name="self_see_scale" type="double" value="1.05" />
      	
     <!-- Loading links from file -->
     <rosparam command="load" file="$(find thor_mang_onboard_launch)/config/self_filtering_links.yaml"/> 
