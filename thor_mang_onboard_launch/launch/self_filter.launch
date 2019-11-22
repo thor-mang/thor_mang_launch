@@ -2,7 +2,7 @@
 <launch>
   <!--converting the laserscan data to a point cloud -->
   <node pkg="vigir_laserscan_to_pointcloud" type="laserscan_to_pointcloud_node" name="scan_to_pointcloud" output="screen" respawn="true">
-    <param name="use_high_fidelity_projection" value="True" />
+    <param name="use_high_fidelity_projection" value="False" />
     <remap from="scan" to="sensor/head_lidar/scan"/>
     <remap from="scan_cloud" to="scan_cloud"/>
     <rosparam command="load" file="$(find thor_mang_onboard_launch)/config/scan_filter.yaml" />

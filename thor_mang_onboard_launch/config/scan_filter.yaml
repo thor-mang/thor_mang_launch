@@ -1,17 +1,37 @@
 scan_filter_chain:
+- name: crop_ceiling
+  type: laser_filters/LaserScanBoxFilter
+  params:
+    box_frame: chest_link
+    min_x: -.inf
+    max_x: .inf
+    min_y: -.inf
+    max_y: .inf
+    min_z: 1.5
+    max_z: .inf
 - name: range
-  type: LaserScanRangeFilter
+  type: laser_filters/LaserScanRangeFilter
   params:
     lower_threshold: 0.2
     upper_threshold: 20.0
+- name: box
+  type: laser_filters/LaserScanBoxFilter
+  params:
+    box_frame: chest_link
+    min_x: -0.3
+    max_x: 0.3
+    min_y: -0.5
+    max_y: 0.5
+    min_z: -1.0
+    max_z: 1.0
 - name: dark_shadows
-  type: LaserScanIntensityFilter
+  type: laser_filters/LaserScanIntensityFilter
   params: 
     lower_threshold: 800
     upper_threshold: 50000
     disp_histogram: 0
 - name: shadows
-  type: ScanShadowsFilter
+  type: laser_filters/ScanShadowsFilter
   params:
     min_angle: 10
     max_angle: 170
