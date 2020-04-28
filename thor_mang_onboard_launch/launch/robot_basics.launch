@@ -34,7 +34,7 @@
   </node>
 
   <!-- combine joint values to TF-->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
   <!-- start Control Mode Switcher -->
   <include file="$(find thor_mang_control_mode_switcher)/launch/control_mode_switcher.launch" />
