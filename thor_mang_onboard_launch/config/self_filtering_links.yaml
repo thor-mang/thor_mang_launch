@@ -1,7 +1,7 @@
 self_see_links: 
   [
-    {"name":"head_link","padding":0.09,}, 
-    {"name":"chest_link",},
+    #{"name":"head_link","padding":0.09,}, 
+    #{"name":"chest_link",},
     {"name":"l_arm_el_y_link",},
     {"name":"l_arm_sh_p1_link",},
     {"name":"l_arm_sh_p2_link",},
